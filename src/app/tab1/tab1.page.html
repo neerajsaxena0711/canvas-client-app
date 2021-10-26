@@ -1,0 +1,26 @@
+<ion-header [translucent]="true">
+  <ion-toolbar>
+    <ion-buttons  (click)="clear()" slot="primary">
+      <ion-button color="secondary">
+        <ion-icon slot="icon-only" name="close-outline"></ion-icon>
+      </ion-button>
+    </ion-buttons>
+    <ion-title>Whiteboard</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content [fullscreen]="true">
+  <ion-header collapse="condense">
+    <ion-toolbar>
+      <ion-title size="large">Draw</ion-title>
+    </ion-toolbar>
+  </ion-header>
+
+  <canvas style="margin-top: 10%;" #imageCanvas (mousedown)="startDrawing($event)"
+  (touchstart)="startDrawing($event)"
+  (mousemove)="moved($event)"
+  (touchmove)="moved($event)"
+  (mouseup)="endDrawing($event)"
+  (touchend)="endDrawing($event)"></canvas>
+
+</ion-content>
